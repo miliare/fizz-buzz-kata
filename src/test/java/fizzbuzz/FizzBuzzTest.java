@@ -19,28 +19,23 @@ public class FizzBuzzTest {
         fizzBuzz = new FizzBuzz();
     }
 
-    @Test(expected = FizzBuzzException.class)
-    public void should_throw_a_fizzbuzz_exception_if_number_superior_to_100() throws FizzBuzzException {
-        fizzBuzz.runWithNumber(102);
-    }
-
-    @Test(expected = FizzBuzzException.class)
-    public void should_throw_a_fizzbuzz_exception_if_number_inferior_to_0() throws FizzBuzzException {
-        fizzBuzz.runWithNumber(-2);
+    @Test
+    public void should_print_string_number() {
+        assertThat(fizzBuzz.run(1)).isEqualTo("1");
     }
 
     @Test
-    public void should_print_Fizz_if_number_is_divisable_by_3() throws FizzBuzzException {
-        assertThat(fizzBuzz.runWithNumber(3)).isEqualTo(FIZZ);
+    public void should_print_Fizz_if_number_is_divisible_by_3() {
+        assertThat(fizzBuzz.run(3)).isEqualTo(FIZZ);
     }
 
     @Test
-    public void should_print_Buzz_if_number_is_divisable_by_5() throws FizzBuzzException {
-        assertThat(fizzBuzz.runWithNumber(5)).isEqualTo(BUZZ);
+    public void should_print_Buzz_if_number_is_divisible_by_5() {
+        assertThat(fizzBuzz.run(5)).isEqualTo(BUZZ);
     }
 
     @Test
-    public void should_print_FizzBuzz_if_number_is_divisable_by_5() throws FizzBuzzException {
-        assertThat(fizzBuzz.runWithNumber(15)).isEqualTo(FIZZ_BUZZ);
+    public void should_print_FizzBuzz_if_number_is_divisible_by_5() {
+        assertThat(fizzBuzz.run(15)).isEqualTo(FIZZ_BUZZ);
     }
 }
